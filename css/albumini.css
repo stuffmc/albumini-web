@@ -1,0 +1,449 @@
+/* Albumini additions to the Ignite styles: accent color, platform tabs, device frames,
+   lightbox, language menu. Written by hand; Tools/Website/make-website.py writes the pages. */
+
+:root {
+    --primary-color: #b8702a;
+    --primary-hover: #9c5d20;
+    --primary-rgb: 184, 112, 42;
+    --bs-primary: #b8702a;
+    --bs-primary-rgb: 184, 112, 42;
+    --bs-link-color: #b8702a;
+    --bs-link-hover-color: #9c5d20;
+    --bezel: #1d1d1f;
+    --bezel-edge: #3a3a3c;
+    --aluminium: linear-gradient(#e3e4e6, #b9babd);
+    color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #e8a050;
+        --primary-hover: #f0b46e;
+        --primary-rgb: 232, 160, 80;
+        --bs-primary: #e8a050;
+        --bs-primary-rgb: 232, 160, 80;
+        --bs-link-color: #e8a050;
+        --bs-link-hover-color: #f0b46e;
+        --bezel: #0b0b0c;
+        --bezel-edge: #48484a;
+        --aluminium: linear-gradient(#8e8e93, #5a5a5e);
+    }
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--primary-color);
+    --bs-btn-border-color: var(--primary-color);
+    --bs-btn-hover-bg: var(--primary-hover);
+    --bs-btn-hover-border-color: var(--primary-hover);
+    --bs-btn-active-bg: var(--primary-hover);
+    --bs-btn-active-border-color: var(--primary-hover);
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #fff;
+}
+
+.hero-icon {
+    width: 128px;
+    height: 128px;
+    display: block;
+    margin: 0 auto 1.25rem;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.18));
+}
+
+.platforms-line {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    opacity: 0.7;
+}
+
+.price-note {
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.65;
+    margin-top: 1.25rem;
+}
+
+.footer-nav {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav a {
+    color: inherit;
+    opacity: 0.75;
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    opacity: 1;
+}
+
+.dropdown-item[aria-current] {
+    font-weight: 600;
+}
+
+.store-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.store-badge img {
+    height: 48px;
+    width: auto;
+}
+
+/* Platform tabs */
+
+.platform-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin: 0 auto 2rem;
+    padding: 4px;
+    width: fit-content;
+    max-width: 100%;
+    border-radius: 999px;
+    background: color-mix(in srgb, currentColor 7%, transparent);
+}
+
+.platform-tabs [role=tab] {
+    border: 0;
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    font: inherit;
+    font-size: 0.95rem;
+    color: inherit;
+    background: transparent;
+    cursor: pointer;
+}
+
+.platform-tabs [role=tab][aria-selected=true] {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.platform-tabs [role=tab]:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+@media (max-width: 575px) {
+    .platform-tabs {
+        border-radius: 18px;
+    }
+}
+
+.platform-panel {
+    display: flex;
+    gap: 40px;
+    align-items: flex-end;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 12px max(16px, calc((100vw - 1140px) / 2)) 28px;
+    scrollbar-width: thin;
+}
+
+.platform-panel[hidden] {
+    display: none;
+}
+
+.shot {
+    flex: none;
+    scroll-snap-align: center;
+    border: 0;
+    padding: 0;
+    background: none;
+    cursor: zoom-in;
+}
+
+.shot:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 6px;
+    border-radius: 12px;
+}
+
+.device {
+    display: block;
+}
+
+.device .screen {
+    display: block;
+    overflow: hidden;
+    background: #000;
+}
+
+.device img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* MacBook Pro with an OLED display and a Dynamic Island in the menu bar. Sizes are in
+   cqw (percent of the laptop's width), so bezel and corner radii stay in proportion. */
+
+.platform-mac .shot {
+    width: min(820px, 88vw);
+}
+
+.macbook {
+    container-type: inline-size;
+}
+
+.macbook .lid {
+    display: block;
+    margin: 0 1.6cqw;
+    padding: 1.15cqw 1.15cqw 1.5cqw;
+    border-radius: 2.6cqw 2.6cqw 0.9cqw 0.9cqw;
+    background: #050505;
+    box-shadow: inset 0 0 0 0.22cqw #3a3a3c, inset 0 0 0 0.45cqw #121212;
+}
+
+.macbook .screen {
+    position: relative;
+    aspect-ratio: 3024 / 1964;
+    border-radius: 1.45cqw 1.45cqw 0.25cqw 0.25cqw;
+    background:
+        radial-gradient(120% 90% at 15% 110%, #f0a25a 0%, transparent 55%),
+        radial-gradient(90% 80% at 95% 0%, #6b3a8c 0%, transparent 60%),
+        radial-gradient(80% 70% at 60% 60%, #b8562a 0%, transparent 70%),
+        #2a1610;
+}
+
+.macbook .menu-bar {
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3.8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.3cqw 0 0.9cqw;
+    background: rgba(0, 0, 0, 0.28);
+}
+
+/* The menu bar screenshot is white on black: "screen" drops the black over the wallpaper. */
+.macbook .menu {
+    height: 100%;
+    width: auto;
+    mix-blend-mode: screen;
+}
+
+.macbook .clock {
+    color: #fff;
+    font: 600 1.05cqw/1 -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.macbook .island {
+    position: absolute;
+    top: 0.5%;
+    left: 50%;
+    width: 10.5%;
+    height: 3%;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    background: #000;
+}
+
+/* The window's own corners are transparent, about 34 of its 2880 × 1800 pixels. */
+.macbook .window {
+    position: absolute;
+    top: 4.6%;
+    left: 2.4%;
+    width: 95.2%;
+    aspect-ratio: 16 / 10;
+    border-radius: 1.18% / 1.89%;
+    box-shadow: 0 0.8cqw 2.6cqw rgba(0, 0, 0, 0.5), 0 0 0 0.08cqw rgba(255, 255, 255, 0.12);
+}
+
+.macbook .base {
+    position: relative;
+    display: block;
+    height: 2cqw;
+    border-radius: 0 0 1.4cqw 1.4cqw / 0 0 1.1cqw 1.1cqw;
+    background: linear-gradient(#e6e7e9, #c4c5c8 40%, #8e9095);
+    box-shadow: 0 1.2cqw 2.4cqw -1cqw rgba(0, 0, 0, 0.45);
+}
+
+.macbook .base::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 13%;
+    height: 42%;
+    transform: translateX(-50%);
+    background: linear-gradient(#a9abaf, #d0d1d4);
+    border-radius: 0 0 1cqw 1cqw;
+}
+
+@media (prefers-color-scheme: dark) {
+    .macbook .base {
+        background: linear-gradient(#6b6d72, #4c4e52 40%, #2e2f32);
+    }
+    .macbook .base::before {
+        background: linear-gradient(#3a3b3e, #55575b);
+    }
+}
+
+/* iPhone and iPad: rounded bezels. */
+
+.platform-iphone .shot {
+    width: min(290px, 70vw);
+}
+
+.iphone .screen,
+.ipad .screen,
+.watch .screen {
+    border: solid var(--bezel);
+    box-shadow: 0 0 0 2px var(--bezel-edge), 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+.iphone .screen {
+    border-width: 11px;
+    border-radius: 48px;
+}
+
+.iphone .screen img {
+    border-radius: 37px;
+}
+
+/* Dynamic Island of a 6.9-inch iPhone: 126 × 37 points, 11 points from the top of 440 × 956. */
+.iphone .screen {
+    position: relative;
+}
+
+.iphone .island {
+    position: absolute;
+    top: 1.15%;
+    left: 50%;
+    width: 28.6%;
+    height: 3.87%;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    background: #000;
+}
+
+.platform-ipad .shot {
+    width: min(460px, 80vw);
+}
+
+.ipad .screen {
+    border-width: 18px;
+    border-radius: 36px;
+}
+
+.ipad .screen img {
+    border-radius: 18px;
+}
+
+/* Apple Watch: rounded case with a Digital Crown and side button. */
+
+.platform-watch .shot {
+    width: min(240px, 60vw);
+}
+
+.watch {
+    position: relative;
+    padding-right: 10px;
+}
+
+.watch .screen {
+    border-width: 16px;
+    border-radius: 54px;
+}
+
+.watch .screen img {
+    border-radius: 38px;
+}
+
+.watch::before,
+.watch::after {
+    content: "";
+    position: absolute;
+    right: 2px;
+    width: 12px;
+    border-radius: 0 6px 6px 0;
+    background: var(--bezel-edge);
+}
+
+.watch::before {
+    top: 24%;
+    height: 16%;
+}
+
+.watch::after {
+    top: 50%;
+    height: 20%;
+    width: 8px;
+    right: 6px;
+}
+
+/* Apple TV: a television with a thin bezel on a stand. */
+
+.platform-tv .shot {
+    width: min(760px, 86vw);
+}
+
+.tv .screen {
+    padding: 1.2%;
+    border-radius: 10px;
+    background: var(--bezel);
+    box-shadow: inset 0 0 0 2px var(--bezel-edge), 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+.tv .stand {
+    display: block;
+    width: 34%;
+    height: 0;
+    padding-bottom: 5%;
+    margin: 0 auto;
+    background:
+        linear-gradient(var(--bezel-edge), var(--bezel-edge)) center top / 12% 70% no-repeat,
+        linear-gradient(var(--bezel-edge), var(--bezel-edge)) center bottom / 100% 30% no-repeat;
+    border-radius: 0 0 6px 6px;
+}
+
+/* Apple Vision Pro: the window in its room, no frame. */
+
+.platform-vision .shot {
+    width: min(760px, 86vw);
+}
+
+.vision .screen {
+    border-radius: 22px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+/* Show the middle of the room, where the window floats (the lightbox shows the whole picture). */
+.vision .screen img {
+    transform: scale(1.5);
+    transform-origin: 50% 60%;
+}
+
+/* Lightbox */
+
+.lightbox {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    max-width: 94vw;
+    max-height: 94vh;
+    cursor: zoom-out;
+}
+
+.lightbox::backdrop {
+    background: rgba(0, 0, 0, 0.82);
+}
+
+.lightbox img {
+    display: block;
+    max-width: 94vw;
+    max-height: 94vh;
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+}

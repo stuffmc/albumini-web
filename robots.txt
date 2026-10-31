@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: objcgn.com/sitemap.xml
+Sitemap: https://albumini.objcgn.com/sitemap.xml

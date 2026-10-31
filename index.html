@@ -1,47 +1,64 @@
 <!doctype html>
 <html lang="en" data-light-theme="light" data-dark-theme="dark">
   <head>
-    <base href="./" />
-    <meta property="og:site_name" content="Albumini" />
-    <meta property="og:title" content="Albumini" />
-    <meta name="twitter:title" content="Albumini" />
-    <meta property="og:url" content="objcgn.com/" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:dnt" content="on" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Manuel Carrasco Molina" />
-    <meta name="generator" content="Ignite v0.6.0" />
-    <title>Albumini</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/bootstrap-icons.min.css" rel="stylesheet" />
-    <link href="css/ignite-core.min.css" rel="stylesheet" />
-    <link href="objcgn.com/" rel="canonical" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <style>
-:root {
-    --primary-color: #b8702a;
-    --primary-rgb: 184, 112, 42;
-    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    color-scheme: light dark;
-}
-</style>
-    <meta name="apple-itunes-app" content="app-id=6824553211" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Albumini – Tidy Up Your Photo Albums</title>
+    <meta name="description" content="Years of imports, migrations, and forgotten projects leave thousands of albums behind. Albumini finds the empty and duplicate ones in seconds – your photos stay safe.">
+    <meta name="author" content="Manuel Carrasco Molina">
+    <meta property="og:site_name" content="Albumini">
+    <meta property="og:title" content="Albumini – Tidy Up Your Photo Albums">
+    <meta property="og:description" content="Years of imports, migrations, and forgotten projects leave thousands of albums behind. Albumini finds the empty and duplicate ones in seconds – your photos stay safe.">
+    <meta property="og:url" content="https://albumini.objcgn.com/">
+    <meta property="og:image" content="https://albumini.objcgn.com/images/og.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:dnt" content="on">
+    <meta name="apple-itunes-app" content="app-id=6824553211">
+    <link rel="canonical" href="https://albumini.objcgn.com/">
+    <link rel="alternate" hreflang="en" href="https://albumini.objcgn.com/">
+    <link rel="alternate" hreflang="de" href="https://albumini.objcgn.com/de/">
+    <link rel="alternate" hreflang="es" href="https://albumini.objcgn.com/es/">
+    <link rel="alternate" hreflang="fr" href="https://albumini.objcgn.com/fr/">
+    <link rel="alternate" hreflang="it" href="https://albumini.objcgn.com/it/">
+    <link rel="alternate" hreflang="nl" href="https://albumini.objcgn.com/nl/">
+    <link rel="alternate" hreflang="x-default" href="https://albumini.objcgn.com/">
+    <link rel="icon" href="images/icon-256.png">
+    <link rel="apple-touch-icon" href="images/icon-256.png">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="css/ignite-core.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/albumini.css" rel="stylesheet">
+<script>
+(function () {
+  var langs = ["de", "es", "fr", "it", "nl"], chosen = null;
+  try { chosen = localStorage.getItem("lang"); } catch (e) {}
+  if (chosen === null) {
+    var wanted = (navigator.languages || [navigator.language || ""]).map(function (l) { return l.slice(0, 2).toLowerCase(); });
+    for (var i = 0; i < wanted.length; i++) {
+      if (wanted[i] === "en") break;
+      if (langs.indexOf(wanted[i]) >= 0) { location.replace(wanted[i] + "/" + location.hash); return; }
+    }
+  }
+})();
+</script>
   </head>
-  <body data-site-classes="site-shell">
+  <body>
     <header>
       <nav class="site-header navbar navbar-expand-md">
         <div class="container flex-wrap flex-lg-nowrap">
           <div class="me-2 me-md-auto">
-            <a href="./" class="brand-link d-inline-flex align-items-center navbar-brand"><img src="images/logo.png" alt="Logo" class="site-logo" /><span class="brand-name">Albumini</span></a>
+            <a href="./" class="brand-link d-inline-flex align-items-center navbar-brand"><img src="images/icon-256.png" alt="" class="site-logo"><span class="brand-name">Albumini</span></a>
           </div>
-          <button type="button" class="navbar-toggler btn" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <button type="button" class="navbar-toggler btn" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Menu"><span class="navbar-toggler-icon"></span></button>
           <div id="navbarCollapse" class="collapse navbar-collapse">
-            <ul class="navbar-nav mb-2 mb-md-0 col justify-content-end">
+            <ul class="navbar-nav mb-2 mb-md-0 col justify-content-end align-items-md-center">
               <li class="nav-item"><a href="#screenshots" class="nav-link text-nowrap">Screenshots</a></li>
               <li class="nav-item"><a href="#features" class="nav-link text-nowrap">Features</a></li>
               <li class="nav-item"><a href="#pricing" class="nav-link text-nowrap">Pricing</a></li>
               <li class="nav-item"><a href="#faq" class="nav-link text-nowrap">FAQ</a></li>
+              <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle text-nowrap" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Language"><i class="bi bi-globe2"></i> EN</a><ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="./" lang="en" hreflang="en" data-lang="en" aria-current="true">English</a></li><li><a class="dropdown-item" href="de/" lang="de" hreflang="de" data-lang="de">Deutsch</a></li><li><a class="dropdown-item" href="es/" lang="es" hreflang="es" data-lang="es">Español</a></li><li><a class="dropdown-item" href="fr/" lang="fr" hreflang="fr" data-lang="fr">Français</a></li><li><a class="dropdown-item" href="it/" lang="it" hreflang="it" data-lang="it">Italiano</a></li><li><a class="dropdown-item" href="nl/" lang="nl" hreflang="nl" data-lang="nl">Nederlands</a></li></ul></li>
               <li class="nav-item"><a href="#download" class="text-nowrap btn btn-sm btn-primary">Download</a></li>
             </ul>
           </div>
@@ -49,312 +66,177 @@
       </nav>
     </header>
     <main class="site-main">
-      <div class="ig-main-content">
-        <div id="hero" class="hero hero-centered">
-          <div class="container">
-            <div class="hero-content">
-              <h1 class="hero-title">Tidy Up Your Photo Albums</h1>
-              <p class="hero-subtitle">Albumini finds the empty and duplicate albums that years of imports and migrations left in Photos — and your photos are never touched.</p>
-              <div class="hero-cta">
-                <a href="#download" class="cta-button cta-button-primary btn btn-primary">Get Albumini</a>
+      <section id="hero" class="hero hero-centered">
+        <div class="container">
+          <div class="hero-content">
+            <img src="images/icon-256.png" alt="" class="hero-icon" width="128" height="128">
+            <h1 class="hero-title">Tidy Up Your Photo Albums</h1>
+            <p class="hero-subtitle">Years of imports, migrations, and forgotten projects leave thousands of albums behind. Albumini finds the empty and duplicate ones in seconds – your photos stay safe.</p>
+            <div class="hero-cta"><a href="https://apps.apple.com/app/id6824553211" class="cta-button cta-button-primary btn btn-primary">Get Albumini</a></div>
+            <p class="platforms-line">For Mac, iPhone, iPad, Apple Watch, Apple TV, and Apple Vision Pro</p>
+          </div>
+        </div>
+      </section>
+      <section id="screenshots" class="screenshots-section">
+        <div class="container">
+          <div class="section-header">
+            <h2>See It in Action</h2>
+            <p class="section-description">Every album with its item count, a filter for the empty ones, and same-name groups that point out duplicates, on every Apple device.</p>
+          </div>
+          <div class="platform-tabs" role="tablist">
+            <button type="button" role="tab" id="tab-mac" aria-controls="panel-mac" aria-selected="true">Mac</button><button type="button" role="tab" id="tab-iphone" aria-controls="panel-iphone" aria-selected="false" tabindex="-1">iPhone</button><button type="button" role="tab" id="tab-ipad" aria-controls="panel-ipad" aria-selected="false" tabindex="-1">iPad</button><button type="button" role="tab" id="tab-watch" aria-controls="panel-watch" aria-selected="false" tabindex="-1">Apple Watch</button><button type="button" role="tab" id="tab-tv" aria-controls="panel-tv" aria-selected="false" tabindex="-1">Apple TV</button><button type="button" role="tab" id="tab-vision" aria-controls="panel-vision" aria-selected="false" tabindex="-1">Apple Vision Pro</button>
+          </div>
+        </div>
+        <div role="tabpanel" id="panel-mac" aria-labelledby="tab-mac" class="platform-panel platform-mac">
+<button type="button" class="shot" data-full="images/screens/en/mac-1-albums.jpg" aria-label="Albumini on Mac: a sortable table of 19 albums with their item counts, next to a sidebar with column options and library statistics: 10 empty, 9 not empty, and 4 duplicates."><span class="device macbook"><span class="lid"><span class="screen"><span class="menu-bar"><img class="menu" src="images/screens/en/menu-bar.png" alt="" loading="lazy" decoding="async"><span class="clock">9:41</span></span><span class="island"></span><img class="window" src="images/screens/en/mac-1-albums.jpg" alt="Albumini on Mac: a sortable table of 19 albums with their item counts, next to a sidebar with column options and library statistics: 10 empty, 9 not empty, and 4 duplicates." loading="lazy" decoding="async"></span></span><span class="base"></span></span></button>
+<button type="button" class="shot" data-full="images/screens/en/mac-2-same-name.jpg" aria-label="Albumini on Mac grouping albums that share a name into folding rows: Archive 2019 with 1 duplicate, Café Views, Mountains, and Summer Trip with 3 duplicates."><span class="device macbook"><span class="lid"><span class="screen"><span class="menu-bar"><img class="menu" src="images/screens/en/menu-bar.png" alt="" loading="lazy" decoding="async"><span class="clock">9:41</span></span><span class="island"></span><img class="window" src="images/screens/en/mac-2-same-name.jpg" alt="Albumini on Mac grouping albums that share a name into folding rows: Archive 2019 with 1 duplicate, Café Views, Mountains, and Summer Trip with 3 duplicates." loading="lazy" decoding="async"></span></span><span class="base"></span></span></button>
+<button type="button" class="shot" data-full="images/screens/en/mac-3-empty.jpg" aria-label="Albumini on Mac with the Empty filter selected: a table of 10 albums that all contain 0 items, ready to be reviewed and deleted."><span class="device macbook"><span class="lid"><span class="screen"><span class="menu-bar"><img class="menu" src="images/screens/en/menu-bar.png" alt="" loading="lazy" decoding="async"><span class="clock">9:41</span></span><span class="island"></span><img class="window" src="images/screens/en/mac-3-empty.jpg" alt="Albumini on Mac with the Empty filter selected: a table of 10 albums that all contain 0 items, ready to be reviewed and deleted." loading="lazy" decoding="async"></span></span><span class="base"></span></span></button>
+</div><div role="tabpanel" id="panel-iphone" aria-labelledby="tab-iphone" class="platform-panel platform-iphone" hidden>
+<button type="button" class="shot" data-full="images/screens/en/iphone-1-albums.jpg" aria-label="Albumini on iPhone: a list of photo albums, each with its number of items. Most albums show 0, revealing how many are empty."><span class="device iphone"><span class="screen"><img src="images/screens/en/iphone-1-albums.jpg" alt="Albumini on iPhone: a list of photo albums, each with its number of items. Most albums show 0, revealing how many are empty." loading="lazy" decoding="async"><span class="island"></span></span></span></button>
+<button type="button" class="shot" data-full="images/screens/en/iphone-2-same-name.jpg" aria-label="Albumini on iPhone grouping albums that share a name: Archive 2019 with 1 duplicate, Cafe Visits, Family, and Summer Trip with 3 duplicates, each showing how many albums it contains."><span class="device iphone"><span class="screen"><img src="images/screens/en/iphone-2-same-name.jpg" alt="Albumini on iPhone grouping albums that share a name: Archive 2019 with 1 duplicate, Cafe Visits, Family, and Summer Trip with 3 duplicates, each showing how many albums it contains." loading="lazy" decoding="async"><span class="island"></span></span></span></button>
+<button type="button" class="shot" data-full="images/screens/en/iphone-3-empty.jpg" aria-label="Albumini on iPhone filtered to empty albums only: a list of albums that all contain 0 items, including four called Summer Trip."><span class="device iphone"><span class="screen"><img src="images/screens/en/iphone-3-empty.jpg" alt="Albumini on iPhone filtered to empty albums only: a list of albums that all contain 0 items, including four called Summer Trip." loading="lazy" decoding="async"><span class="island"></span></span></span></button>
+</div><div role="tabpanel" id="panel-ipad" aria-labelledby="tab-ipad" class="platform-panel platform-ipad" hidden>
+<button type="button" class="shot" data-full="images/screens/en/ipad-1-albums.jpg" aria-label="Albumini on iPad: the album list with item counts next to an options panel showing 19 albums, 10 empty, 9 not empty, and 4 duplicates."><span class="device ipad"><span class="screen"><img src="images/screens/en/ipad-1-albums.jpg" alt="Albumini on iPad: the album list with item counts next to an options panel showing 19 albums, 10 empty, 9 not empty, and 4 duplicates." loading="lazy" decoding="async"></span></span></button>
+<button type="button" class="shot" data-full="images/screens/en/ipad-2-same-name.jpg" aria-label="Albumini on iPad with albums grouped by name: Archive 2019 with 1 duplicate, Café Views, Mountains, and Summer Trip with 3 duplicates."><span class="device ipad"><span class="screen"><img src="images/screens/en/ipad-2-same-name.jpg" alt="Albumini on iPad with albums grouped by name: Archive 2019 with 1 duplicate, Café Views, Mountains, and Summer Trip with 3 duplicates." loading="lazy" decoding="async"></span></span></button>
+<button type="button" class="shot" data-full="images/screens/en/ipad-3-empty.jpg" aria-label="Albumini on iPad showing only the empty albums, ready to be selected and deleted."><span class="device ipad"><span class="screen"><img src="images/screens/en/ipad-3-empty.jpg" alt="Albumini on iPad showing only the empty albums, ready to be selected and deleted." loading="lazy" decoding="async"></span></span></button>
+</div><div role="tabpanel" id="panel-watch" aria-labelledby="tab-watch" class="platform-panel platform-watch" hidden>
+<button type="button" class="shot" data-full="images/screens/en/watch-1-counts.jpg" aria-label="Albumini on Apple Watch: 463 empty albums, 58 duplicates, and 7,637 albums in all."><span class="device watch"><span class="screen"><img src="images/screens/en/watch-1-counts.jpg" alt="Albumini on Apple Watch: 463 empty albums, 58 duplicates, and 7,637 albums in all." loading="lazy" decoding="async"></span></span></button>
+<button type="button" class="shot" data-full="images/screens/en/watch-2-empty.jpg" aria-label="Albumini on Apple Watch listing empty albums."><span class="device watch"><span class="screen"><img src="images/screens/en/watch-2-empty.jpg" alt="Albumini on Apple Watch listing empty albums." loading="lazy" decoding="async"></span></span></button>
+<button type="button" class="shot" data-full="images/screens/en/watch-3-duplicates.jpg" aria-label="Albumini on Apple Watch listing duplicate albums."><span class="device watch"><span class="screen"><img src="images/screens/en/watch-3-duplicates.jpg" alt="Albumini on Apple Watch listing duplicate albums." loading="lazy" decoding="async"></span></span></button>
+</div><div role="tabpanel" id="panel-tv" aria-labelledby="tab-tv" class="platform-panel platform-tv" hidden>
+<button type="button" class="shot" data-full="images/screens/en/tv-1-top-shelf.jpg" aria-label="The Apple TV Home Screen with Albumini’s Top Shelf showing empty albums, Cafe Views and mountains."><span class="device tv"><span class="screen"><img src="images/screens/en/tv-1-top-shelf.jpg" alt="The Apple TV Home Screen with Albumini’s Top Shelf showing empty albums, Cafe Views and mountains." loading="lazy" decoding="async"></span><span class="stand"></span></span></button>
+<button type="button" class="shot" data-full="images/screens/en/tv-2-albums.jpg" aria-label="Albumini on Apple TV: large filter buttons for all, empty, or non-empty albums above the list of albums and their item counts."><span class="device tv"><span class="screen"><img src="images/screens/en/tv-2-albums.jpg" alt="Albumini on Apple TV: large filter buttons for all, empty, or non-empty albums above the list of albums and their item counts." loading="lazy" decoding="async"></span><span class="stand"></span></span></button>
+<button type="button" class="shot" data-full="images/screens/en/tv-3-duplicates.jpg" aria-label="Albumini on Apple TV grouping albums by name, with 1 duplicate in Archive 2019 and 3 duplicates in Summer Trip."><span class="device tv"><span class="screen"><img src="images/screens/en/tv-3-duplicates.jpg" alt="Albumini on Apple TV grouping albums by name, with 1 duplicate in Archive 2019 and 3 duplicates in Summer Trip." loading="lazy" decoding="async"></span><span class="stand"></span></span></button>
+<button type="button" class="shot" data-full="images/screens/en/tv-4-statistics.jpg" aria-label="Albumini on Apple TV showing library statistics: albums, empty albums, and duplicates."><span class="device tv"><span class="screen"><img src="images/screens/en/tv-4-statistics.jpg" alt="Albumini on Apple TV showing library statistics: albums, empty albums, and duplicates." loading="lazy" decoding="async"></span><span class="stand"></span></span></button>
+</div><div role="tabpanel" id="panel-vision" aria-labelledby="tab-vision" class="platform-panel platform-vision" hidden>
+<button type="button" class="shot" data-full="images/screens/en/vision-1-albums.jpg" aria-label="Albumini on Apple Vision Pro: a window with the album list and its options, floating in a living room."><span class="device vision"><span class="screen"><img src="images/screens/en/vision-1-albums.jpg" alt="Albumini on Apple Vision Pro: a window with the album list and its options, floating in a living room." loading="lazy" decoding="async"></span></span></button>
+<button type="button" class="shot" data-full="images/screens/en/vision-2-same-name.jpg" aria-label="Albumini on Apple Vision Pro grouping albums that share a name."><span class="device vision"><span class="screen"><img src="images/screens/en/vision-2-same-name.jpg" alt="Albumini on Apple Vision Pro grouping albums that share a name." loading="lazy" decoding="async"></span></span></button>
+<button type="button" class="shot" data-full="images/screens/en/vision-3-empty.jpg" aria-label="Albumini on Apple Vision Pro showing only the empty albums."><span class="device vision"><span class="screen"><img src="images/screens/en/vision-3-empty.jpg" alt="Albumini on Apple Vision Pro showing only the empty albums." loading="lazy" decoding="async"></span></span></button>
+</div>
+      </section>
+      <section id="features" class="features-section features-grid-layout">
+        <div class="container">
+          <div class="section-header">
+            <h2>Everything for a Tidy Library</h2>
+            <p class="section-description">Built for libraries with thousands of albums.</p>
+          </div>
+          <div class="features-grid">
+<div class="feature-card"><div class="feature-icon"><i class="feature-icon-image bi-collection"></i></div><h3 class="feature-title">Every Album at a Glance</h3><p class="feature-description">One clear, sortable list of every album, with its photo and video count.</p></div>
+<div class="feature-card"><div class="feature-icon"><i class="feature-icon-image bi-funnel"></i></div><h3 class="feature-title">Empty Albums in One Tap</h3><p class="feature-description">Filter down to the albums with nothing in them, or to the ones that hold items.</p></div>
+<div class="feature-card"><div class="feature-icon"><i class="feature-icon-image bi-copy"></i></div><h3 class="feature-title">Same-Name Groups</h3><p class="feature-description">Albums that share a name are grouped, and the empty copies are marked as duplicates.</p></div>
+<div class="feature-card"><div class="feature-icon"><i class="feature-icon-image bi-folder2-open"></i></div><h3 class="feature-title">Organize in Folders</h3><p class="feature-description">Drag albums into folders or into a new one, take them back out, and find the empty folders migrations left behind.</p></div>
+<div class="feature-card"><div class="feature-icon"><i class="feature-icon-image bi-shield-check"></i></div><h3 class="feature-title">Your Photos Stay Safe</h3><p class="feature-description">Only empty albums and folders can be deleted, and Photos asks you to confirm every time.</p></div>
+<div class="feature-card"><div class="feature-icon"><i class="feature-icon-image bi-arrow-counterclockwise"></i></div><h3 class="feature-title">Restore Last Deleted</h3><p class="feature-description">Deleted the wrong empty albums? Bring them back, with their names and in their folders.</p></div>
+<div class="feature-card"><div class="feature-icon"><i class="feature-icon-image bi-box-arrow-up-right"></i></div><h3 class="feature-title">Open in Photos</h3><p class="feature-description">On the Mac, open any album directly in the Photos app.</p></div>
+<div class="feature-card"><div class="feature-icon"><i class="feature-icon-image bi-smartwatch"></i></div><h3 class="feature-title">Widgets, Watch, Top Shelf</h3><p class="feature-description">Keep an eye on empty albums and duplicates from your Home Screen, desktop, wrist, and Apple TV.</p></div>
+<div class="feature-card"><div class="feature-icon"><i class="feature-icon-image bi-lock-fill"></i></div><h3 class="feature-title">Private by Design</h3><p class="feature-description">Everything runs on your device. Nothing is collected, uploaded, or shared.</p></div>
+          </div>
+        </div>
+      </section>
+      <section id="pricing" class="pricing-section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Free to Find, Pro to Clean Up</h2>
+            <p class="section-description">One purchase unlocks Pro on all your devices with the same Apple Account. No subscription.</p>
+          </div>
+          <div class="pricing-content">
+            <div class="pricing-tiers">
+              <div class="pricing-tier">
+                <h3 class="pricing-tier-name">Albumini</h3>
+                <p class="pricing-tier-description">Scan your library, see every album’s count, filter empty albums, find duplicates, and try three deletions and three moves into folders.</p>
+                <div class="pricing-price"><div class="pricing-price-line"><span class="pricing-amount">Free</span></div></div>
+                <a href="#download" class="pricing-cta btn btn-secondary">Download</a>
               </div>
+              <div class="pricing-tier pricing-tier-highlighted">
+                <span class="pricing-badge badge text-bg-primary rounded-pill">Recommended</span>
+                <h3 class="pricing-tier-name">Albumini Pro</h3>
+                <p class="pricing-tier-description">Delete empty albums and folders many at once, move many albums into folders at once, browse an album’s photos, open albums in Photos on the Mac, and restore the last deleted.</p>
+                <div class="pricing-price"><div class="pricing-price-line"><span class="pricing-amount">€4.99</span><span class="pricing-period pricing-period-onetime">one-time</span></div></div>
+                <a href="#download" class="pricing-cta btn btn-primary">Get Pro in the App</a>
+              </div>
+            </div>
+            <p class="price-note">The App Store shows the price in your currency.</p>
+          </div>
+        </div>
+      </section>
+      <section id="faq" class="faq-section">
+        <div class="container">
+          <div class="section-header"><h2>Questions</h2></div>
+          <div class="faq-content faq-accordion-layout">
+            <div id="faq" class="faq-accordion accordion">
+<div class="accordion-item"><h3 class="accordion-header"><button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq-0" aria-expanded="false" aria-controls="faq-0">Can Albumini delete my photos?</button></h3><div id="faq-0" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body"><p class="faq-answer">No. Albumini only deletes empty albums and empty folders, and Photos asks you to confirm each time. Deleting an album never deletes a photo.</p></div></div></div>
+<div class="accordion-item"><h3 class="accordion-header"><button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq-1" aria-expanded="false" aria-controls="faq-1">What counts as a duplicate?</button></h3><div id="faq-1" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body"><p class="faq-answer">Albums with the same name. Same Name groups them, ignoring upper and lower case, accents, and extra spaces, and marks the empty copies as duplicates, so you can keep one of each.</p></div></div></div>
+<div class="accordion-item"><h3 class="accordion-header"><button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq-2" aria-expanded="false" aria-controls="faq-2">Does anything leave my device?</button></h3><div id="faq-2" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body"><p class="faq-answer">No. Albumini reads album names and item counts on your device and collects nothing.</p></div></div></div>
+<div class="accordion-item"><h3 class="accordion-header"><button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq-3" aria-expanded="false" aria-controls="faq-3">Which devices does it run on?</button></h3><div id="faq-3" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body"><p class="faq-answer">Mac, iPhone, iPad, Apple Watch, Apple TV, and Apple Vision Pro. One Albumini Pro purchase unlocks all of them.</p></div></div></div>
+<div class="accordion-item"><h3 class="accordion-header"><button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq-4" aria-expanded="false" aria-controls="faq-4">My library has thousands of albums. Is that a problem?</button></h3><div id="faq-4" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body"><p class="faq-answer">No, Albumini is built for that. The first scan runs in the background, and the list opens instantly afterwards.</p></div></div></div>
+<div class="accordion-item"><h3 class="accordion-header"><button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq-5" aria-expanded="false" aria-controls="faq-5">What does Albumini Pro add?</button></h3><div id="faq-5" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body"><p class="faq-answer">Without Pro, you can delete three times on Mac, iPhone, and iPad. Pro deletes without limits and many albums at once, shows an album’s photos, and restores the albums you deleted last.</p></div></div></div>
             </div>
           </div>
         </div>
-        <div id="screenshots" class="screenshots-section screenshots-carousel">
-          <div class="container">
-            <div class="section-header">
-              <h2>See It in Action</h2>
-              <p class="section-description">Every album with its item count, filters for empty albums, and same-name groups that point out duplicates — on Mac, iPhone, iPad, Apple Vision Pro, and Apple TV.</p>
-            </div>
-            <div class="screenshots-container">
-              <div class="screenshots-scroll">
-                <div class="screenshot-card">
-                  <button type="button" class="screenshot-trigger btn" data-bs-toggle="modal" data-bs-target="#screenshot-modal-0"><img src="images/screenshots/2-same-name-framed.png" alt="Screenshot 1" class="screenshot-image screenshot-frame-image screenshot-landscape-image" /></button>
-                </div>
-                <div class="screenshot-card">
-                  <button type="button" class="screenshot-trigger btn" data-bs-toggle="modal" data-bs-target="#screenshot-modal-1"><img src="images/screenshots/3-empty-framed.png" alt="Screenshot 2" class="screenshot-image screenshot-frame-image screenshot-landscape-image" /></button>
-                </div>
-                <div class="screenshot-card">
-                  <button type="button" class="screenshot-trigger btn" data-bs-toggle="modal" data-bs-target="#screenshot-modal-2"><img src="images/screenshots/1-albums-framed.png" alt="Screenshot 3" class="screenshot-image screenshot-frame-image screenshot-landscape-image" /></button>
-                </div>
-              </div>
-            </div>
-            <div id="screenshot-modal-0" tabindex="-1" class="modal fade screenshot-modal" aria-labelledby="screenshotModalLabel0" aria-hidden="true">
-              <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4>Screenshot 1</h4>
-                    <button type="button" class="btn btn-close" data-bs-dismiss="modal" label="Close"></button>
-                  </div>
-                  <div class="modal-body text-center">
-                    <img src="images/screenshots/2-same-name-framed.png" alt="Screenshot 1" class="img-fluid screenshot-lightbox-image screenshot-frame-image screenshot-landscape-image" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="screenshot-modal-1" tabindex="-1" class="modal fade screenshot-modal" aria-labelledby="screenshotModalLabel1" aria-hidden="true">
-              <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4>Screenshot 2</h4>
-                    <button type="button" class="btn btn-close" data-bs-dismiss="modal" label="Close"></button>
-                  </div>
-                  <div class="modal-body text-center">
-                    <img src="images/screenshots/3-empty-framed.png" alt="Screenshot 2" class="img-fluid screenshot-lightbox-image screenshot-frame-image screenshot-landscape-image" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="screenshot-modal-2" tabindex="-1" class="modal fade screenshot-modal" aria-labelledby="screenshotModalLabel2" aria-hidden="true">
-              <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4>Screenshot 3</h4>
-                    <button type="button" class="btn btn-close" data-bs-dismiss="modal" label="Close"></button>
-                  </div>
-                  <div class="modal-body text-center">
-                    <img src="images/screenshots/1-albums-framed.png" alt="Screenshot 3" class="img-fluid screenshot-lightbox-image screenshot-frame-image screenshot-landscape-image" />
-                  </div>
-                </div>
-              </div>
-            </div>
+      </section>
+      <section id="reviews" class="testimonials-section testimonials-carousel">
+        <div class="container">
+          <div class="section-header"><h2>What Users Say</h2></div>
+          <div class="testimonials-scroll">
+<div class="testimonial-card"><div class="testimonial-rating" aria-label="5/5"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="testimonial-quote">After moving from iPhoto to Photos across three Macs, I had thousands of empty albums. Albumini showed counts instantly and let me clear duplicates safely. Saved my afternoon.</p><p class="testimonial-author">Sarah M.</p></div>
+<div class="testimonial-card"><div class="testimonial-rating" aria-label="5/5"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="testimonial-quote">My library ballooned after years of shared events. I used the same-name groups to spot repeats and cleaned up in minutes. Photos stayed untouched, just the clutter gone.</p><p class="testimonial-author">John D.</p></div>
+<div class="testimonial-card"><div class="testimonial-rating" aria-label="4/5"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span></div><p class="testimonial-quote">I feared losing shots from old projects, but Albumini only removes albums. The preview helped me decide, and background scanning handled my ten thousand albums easily.</p><p class="testimonial-author">Elena R.</p></div>
+<div class="testimonial-card"><div class="testimonial-rating" aria-label="5/5"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="testimonial-quote">Finally saw every album with its photo count. Filtering empty ones made the sidebar manageable again. Works across my iPhone and Mac without uploading anything.</p><p class="testimonial-author">Mark T.</p></div>
           </div>
         </div>
-        <div id="features" class="features-section features-grid-layout features-grid-multiple-of-two">
-          <div class="container">
-            <div class="section-header">
-              <h2>Everything for a Tidy Library</h2>
-              <p class="section-description">Built for libraries with thousands of albums.</p>
-            </div>
-            <div class="features-grid">
-              <div class="feature-card">
-                <div class="feature-icon">
-                  <i class="feature-icon-image bi-eye-fill"></i>
-                </div>
-                <h4 class="feature-title">Every Album at Glance</h4>
-                <p class="feature-description">See every album with photo and video counts in one clear list.</p>
-              </div>
-              <div class="feature-card">
-                <div class="feature-icon">
-                  <i class="feature-icon-image bi-star-fill"></i>
-                </div>
-                <h4 class="feature-title">One-Tap Filters</h4>
-                <p class="feature-description">Instantly isolate empty or non-empty albums for fast cleanup.</p>
-              </div>
-              <div class="feature-card">
-                <div class="feature-icon">
-                  <i class="feature-icon-image bi-star-fill"></i>
-                </div>
-                <h4 class="feature-title">Same-Name Groups</h4>
-                <p class="feature-description">Spot exact duplicate albums instantly by grouping shared names.</p>
-              </div>
-              <div class="feature-card">
-                <div class="feature-icon">
-                  <i class="feature-icon-image bi-shield-check"></i>
-                </div>
-                <h4 class="feature-title">Safe Cleanup</h4>
-                <p class="feature-description">Remove clutter with one tap while keeping every photo safe.</p>
-              </div>
-              <div class="feature-card">
-                <div class="feature-icon">
-                  <i class="feature-icon-image bi-lightning-charge-fill"></i>
-                </div>
-                <h4 class="feature-title">Built for Huge Libraries</h4>
-                <p class="feature-description">Background scanning handles thousands of albums with instant reopening.</p>
-              </div>
-              <div class="feature-card">
-                <div class="feature-icon">
-                  <i class="feature-icon-image bi-star-fill"></i>
-                </div>
-                <h4 class="feature-title">Open in Photos</h4>
-                <p class="feature-description">Launch any album directly in Photos on your Mac.</p>
-              </div>
-              <div class="feature-card">
-                <div class="feature-icon">
-                  <i class="feature-icon-image bi-folder-fill"></i>
-                </div>
-                <h4 class="feature-title">Folders, Too</h4>
-                <p class="feature-description">See albums inside their folders and find empty folders left behind by migrations.</p>
-              </div>
-              <div class="feature-card">
-                <div class="feature-icon">
-                  <i class="feature-icon-image bi-arrow-counterclockwise"></i>
-                </div>
-                <h4 class="feature-title">Restore Last Deleted</h4>
-                <p class="feature-description">Deleted the wrong empty albums? Bring them back, in their folders.</p>
-              </div>
-            </div>
+      </section>
+      <section id="download" class="download-section">
+        <div class="container">
+          <div class="download-content">
+            <h2>Reclaim Your Library Now</h2>
+            <p class="download-description">Find the empty and duplicate albums in seconds. Your photos stay where they are.</p>
+            <div class="store-badges"><a href="https://apps.apple.com/app/id6824553211" class="store-badge"><picture><source srcset="images/app-store-download-white.svg" media="(prefers-color-scheme: dark)"><img src="images/app-store-download-black.svg" alt="Download on the App Store" height="48"></picture></a><a href="https://apps.apple.com/app/id6824553211" class="store-badge"><picture><source srcset="images/mac-app-store-download-white.svg" media="(prefers-color-scheme: dark)"><img src="images/mac-app-store-download-black.svg" alt="Download on the Mac App Store" height="48"></picture></a><a href="https://apps.apple.com/app/id6824553211" class="store-badge"><picture><source srcset="images/apple-tv-download-white.svg" media="(prefers-color-scheme: dark)"><img src="images/apple-tv-download-black.svg" alt="Download on Apple TV" height="48"></picture></a></div>
           </div>
         </div>
-        <div id="pricing" class="pricing-section">
-          <div class="container">
-            <div class="section-header">
-              <h2>Free to Find, Pro to Clean Up</h2>
-              <p class="section-description">One purchase covers your Mac, iPhone, iPad, Apple Vision Pro, and Apple TV. No subscription.</p>
-            </div>
-            <div class="pricing-content">
-              <div class="pricing-tiers">
-                <div class="pricing-tier">
-                  <h3 class="pricing-tier-name">Albumini</h3>
-                  <p class="pricing-tier-description">Scan your library, see every album’s count, filter empty albums, and find duplicates.</p>
-                  <div class="pricing-price">
-                    <div class="pricing-price-line">
-                      <span class="pricing-amount">Free</span>
-                      <span class="pricing-period pricing-period-onetime">one-time</span>
-                    </div>
-                  </div>
-                  <a href="#download" class="pricing-cta btn btn-secondary">Download</a>
-                </div>
-                <div class="pricing-tier pricing-tier-highlighted">
-                  <span class="pricing-badge badge text-bg-primary rounded-pill">Recommended</span>
-                  <h3 class="pricing-tier-name">Albumini Pro</h3>
-                  <p class="pricing-tier-description">Open albums in Photos, browse their photos, delete empty albums and folders many at once, and restore the last deleted.</p>
-                  <div class="pricing-price">
-                    <div class="pricing-price-line">
-                      <span class="pricing-amount">4,99 €</span>
-                      <span class="pricing-period pricing-period-onetime">one-time</span>
-                    </div>
-                  </div>
-                  <a href="#download" class="pricing-cta btn btn-primary">Get Pro in the App</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="faq" class="faq-section">
-          <div class="container">
-            <div class="section-header">
-              <h2>Questions</h2>
-            </div>
-            <div class="faq-content faq-accordion-layout">
-              <div id="accordionH0Lzd" class="faq-accordion accordion">
-                <div class="accordion-item">
-                  <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#accordionH0Lzd-itemULOMq" aria-expanded="false" aria-controls="accordionH0Lzd-itemULOMq">Can Albumini delete my photos?</button></h2>
-                  <div id="accordionH0Lzd-itemULOMq" class="accordion-collapse collapse" data-bs-parent="#accordionH0Lzd">
-                    <div class="accordion-body">
-                      <p class="faq-answer">No. Albumini only deletes empty albums and empty folders, and only after you confirm. Deleting an album never deletes a photo.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#accordionH0Lzd-itemgQlg2" aria-expanded="false" aria-controls="accordionH0Lzd-itemgQlg2">What counts as a duplicate?</button></h2>
-                  <div id="accordionH0Lzd-itemgQlg2" class="accordion-collapse collapse" data-bs-parent="#accordionH0Lzd">
-                    <div class="accordion-body">
-                      <p class="faq-answer">Albums with exactly the same name. Same Name groups them and points out the empty copies, so you can keep one of each.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#accordionH0Lzd-item5SEcC" aria-expanded="false" aria-controls="accordionH0Lzd-item5SEcC">Does anything leave my device?</button></h2>
-                  <div id="accordionH0Lzd-item5SEcC" class="accordion-collapse collapse" data-bs-parent="#accordionH0Lzd">
-                    <div class="accordion-body">
-                      <p class="faq-answer">No. Albumini reads album names and item counts on your device and collects nothing.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#accordionH0Lzd-itemm5bSq" aria-expanded="false" aria-controls="accordionH0Lzd-itemm5bSq">Which devices does it run on?</button></h2>
-                  <div id="accordionH0Lzd-itemm5bSq" class="accordion-collapse collapse" data-bs-parent="#accordionH0Lzd">
-                    <div class="accordion-body">
-                      <p class="faq-answer">Mac, iPhone, iPad, Apple Vision Pro, and Apple TV. One Albumini Pro purchase unlocks all of them.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#accordionH0Lzd-itemytnuL" aria-expanded="false" aria-controls="accordionH0Lzd-itemytnuL">My library has thousands of albums. Is that a problem?</button></h2>
-                  <div id="accordionH0Lzd-itemytnuL" class="accordion-collapse collapse" data-bs-parent="#accordionH0Lzd">
-                    <div class="accordion-body">
-                      <p class="faq-answer">No, Albumini is built for that. The first scan runs in the background and the list reopens instantly afterwards.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="reviews" class="testimonials-section testimonials-carousel">
-          <div class="container">
-            <div class="section-header">
-              <h2>What Users Say</h2>
-              <p class="section-description">Read reviews posted on the App Store.</p>
-            </div>
-            <div class="testimonials-scroll">
-              <div class="testimonial-card">
-                <div class="testimonial-rating">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                </div>
-                <p class="testimonial-quote">After moving from iPhoto to Photos across three Macs, I had thousands of empty albums. Albumini showed counts instantly and let me clear duplicates safely. Saved my afternoon.</p>
-                <p class="testimonial-author">Sarah M.</p>
-              </div>
-              <div class="testimonial-card">
-                <div class="testimonial-rating">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                </div>
-                <p class="testimonial-quote">My library ballooned after years of shared events. I used the same-name groups to spot repeats and cleaned up in minutes. Photos stayed untouched, just the clutter gone.</p>
-                <p class="testimonial-author">John D.</p>
-              </div>
-              <div class="testimonial-card">
-                <div class="testimonial-rating">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">☆</span>
-                </div>
-                <p class="testimonial-quote">I feared losing shots from old projects, but Albumini only removes albums. The preview helped me decide, and background scanning handled my ten thousand albums easily.</p>
-                <p class="testimonial-author">Elena R.</p>
-              </div>
-              <div class="testimonial-card">
-                <div class="testimonial-rating">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                </div>
-                <p class="testimonial-quote">Finally saw every album with its photo count. Filtering empty ones made the sidebar manageable again. Works across my iPhone and Mac without uploading anything.</p>
-                <p class="testimonial-author">Mark T.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="download" class="download-section">
-          <div class="container">
-            <div class="download-content">
-              <h2>Reclaim Your Library Now</h2>
-              <p class="download-description">Stop scrolling - clean thousands instantly.</p>
-              <div class="store-badges">
-                <a href="#download" class="cta-button download-cta-button btn btn-primary">Download Albumini</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </section>
     </main>
-    <div class="site-footer">
+    <footer class="site-footer">
       <div class="container">
         <div class="footer-content">
           <div class="footer-brand">
-            <img src="images/footer-logo.png" alt="Logo" class="footer-logo" />
-            <p class="footer-tagline">Tidy up your photo albums</p>
+            <img src="images/footer-logo.png" alt="" class="footer-logo">
+            <p class="footer-tagline">Tidy Up Your Photo Albums</p>
           </div>
+          <ul class="footer-nav">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="mailto:support@objcgn.com">Support</a></li>
+          </ul>
         </div>
-        <div class="footer-copyright">
-          <p>© 2026 Manuel Carrasco Molina. All rights reserved.</p>
-          <a href="https://www.kickstart.tools" class="footer-kickstart-link">Built with Kickstart</a>
-        </div>
+        <div class="footer-copyright"><p>© 2026 Manuel Carrasco Molina. All rights reserved.</p></div>
       </div>
-    </div>
+    </footer>
+    <dialog id="lightbox" class="lightbox"><img alt=""></dialog>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/ignite-core.js"></script>
+    <script>
+document.querySelectorAll("[data-lang]").forEach(function (a) {
+  a.addEventListener("click", function () { try { localStorage.setItem("lang", a.dataset.lang); } catch (e) {} });
+});
+document.querySelectorAll(".platform-tabs [role=tab]").forEach(function (tab) {
+  tab.addEventListener("click", function () {
+    document.querySelectorAll(".platform-tabs [role=tab]").forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute("aria-selected", on);
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+    });
+  });
+});
+var lightbox = document.getElementById("lightbox");
+document.querySelectorAll(".shot").forEach(function (shot) {
+  shot.addEventListener("click", function () {
+    var img = lightbox.querySelector("img");
+    img.src = shot.dataset.full;
+    img.alt = shot.getAttribute("aria-label");
+    lightbox.showModal();
+  });
+});
+lightbox.addEventListener("click", function () { lightbox.close(); });
+</script>
   </body>
 </html>
